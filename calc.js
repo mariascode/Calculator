@@ -5,15 +5,11 @@ const result = document.querySelector('.result');
 const clear = document.querySelector('.clear');
 
 document.querySelectorAll('.num').forEach(function (num) {
-  num.addEventListener('click', function (e) {
-    console.log('It works');
-  });
+  num.addEventListener('click', takeInfo);
 });
 
 document.querySelectorAll('.func').forEach(function (num) {
-  num.addEventListener('click', function (e) {
-    console.log('It works');
-  });
+  num.addEventListener('click', takeInfo);
 });
 
 result.addEventListener('click', function (e) {
@@ -23,3 +19,9 @@ result.addEventListener('click', function (e) {
 clear.addEventListener('click', function (e) {
   console.log('I work');
 });
+
+function takeInfo(e) {
+  const info = e.currentTarget.innerHTML.concat();
+
+  display.textContent = info;
+}
